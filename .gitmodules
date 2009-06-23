@@ -1,0 +1,6 @@
+[submodule "system"]
+	path = system
+	url = git://github.com/shadowhand/kohana-core.git
+[submodule "modules/database"]
+	path = modules/database
+	url = git://github.com/shadowhand/kohana-database.git
