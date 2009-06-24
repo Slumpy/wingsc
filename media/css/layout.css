@@ -1,0 +1,74 @@
+html { background: #fff; font-family: Helvetica, Arial, Verdana, sans-serif; color: #111; }
+body { margin: 0 0 1.5em; }
+
+h1, h2, h3, h4, h5, h6 { font-weight: normal; color: #aaa; }
+h4, h5, h6 { text-transform: uppercase; }
+h4 { font-size: 0.9em; }
+h5 { font-size: 0.8em; }
+h6 { font-size: 0.7em; }
+
+div.container ul { list-style: square; }
+div.container form { width: 90%; margin: 0 auto 1em; }
+	div.container form ul { display: block; margin: 0; padding: 1em; background: #eee; }
+		div.container form ul.errors li { color: #711; }
+	div.container form dl {  }
+		div.container form dl dt,
+		div.container form dl dd { width: 100%; }
+			div.container form dd input,
+			div.container form dd select,
+			div.container form dd textarea { width: 98%; font-size: 1.6em; background-color: #f9f9f9; }
+		div.container form dl dd.submit { padding: 1em 0; }
+
+#header,
+#content,
+#footer { position: relative; z-index: 1; }
+
+#header { height: 200px; }
+	#logo { position: absolute; top: 52px; }
+
+	#menu { display: block; height: 169px; position: absolute; right: 0; top: 11px; padding: 0 68px 0 69px; margin: 0; list-style: none; background: transparent url(../img/bg_menu.png); }
+		#menu li { display: block; float: left; padding: 0; margin: 0; }
+			#menu li a { display: block; height: 169px; background: transparent url(../img/bg_menu_link.png) 0 0 no-repeat; text-indent: -3000em; }
+			#menu li.did a { width: 62px; background-position: 0 0; }
+				#menu li.did a:hover { background-position: 0 -169px; }
+				#menu li.did a.active { background-position: 0 -338px; }
+			#menu li.does a { width: 68px; background-position: -62px 0; }
+				#menu li.does a:hover { background-position: -62px -169px; }
+				#menu li.does a.active { background-position: -62px -338px; }
+			#menu li.will a { width: 92px; background-position: -130px 0; }
+				#menu li.will a:hover { background-position: -130px -169px; }
+				#menu li.will a.active { background-position: -130px -338px; }
+			#menu li.for a { width: 89px; background-position: -220px 0; }
+				#menu li.for a:hover { background-position: -220px -169px; }
+				#menu li.for a.active { background-position: -220px -338px; }
+
+#content { padding-top: 20px; background: transparent url(../img/bg_content.xpng) center 0 no-repeat; font-size: 1.2em; }
+	#content h2,
+	#content h3 { text-transform: lowercase; padding-bottom: 0.3em; border-bottom: dotted 1px #ddd; }
+	#content .byline { text-transform: uppercase; font-size: 0.7em; color: #666; }
+	#content .intro { margin: 0 -40px 1em; padding: 2em; background: #eee; font-size: 1.4em; line-height: 1.5em; color: #444; font-weight: normal;  border: solid 1px #e6e6e6; border-width: 0 1px 1px 0;}
+		#content .intro p:last-child { margin: 0; }
+		#content .intro em { color: #666; font-style: normal; }
+		#content .intro span { color: #999; }
+
+#footer { min-height: 200px; padding-top: 20px; text-transform: lowercase; color: #999; }
+	#footer a { color: #999; }
+	#footer a:hover { color: #780c0c; }
+	#footer p { float: left; clear: left; margin: 0; }
+	#footer div.vcard {  }
+		#footer div.vcard ul { display: block; float: right; margin: 0; text-align: right; }
+			#footer div.vcard li { display: inline; padding: 0 1em 0 0; margin: 0; }
+			#footer div.vcard li.adr,
+			#footer div.vcard li.copyright { display: block; }
+				#footer div.vcard li.org a { text-decoration: none; color: #666; }
+
+#portfolio { background: #eee; overflow: auto; }
+	#portfolio #details { background: #fff; margin-right: 0; padding-right: 10px; }
+		#portfolio #details .image { width: 600px; min-height: 200px; padding: 15px; text-align: center; background: #222 url(../img/loading.gif) center center no-repeat; }
+	#portfolio #list { margin: 0 0 0; background: #eee; }
+		#portfolio #list ol { display: block; margin: 2em 0; padding: 0; list-style: none; background: #eee; }
+			#portfolio #list li { display: block; padding: 0.2em 0; padding-right: 0.4em; }
+				#portfolio #list li a { display: block; padding: 0.4em; background: #eee; }
+				#portfolio #list li.active a { background: #fff; }
+
+#admin p.message { margin: 0 -120px 1em; padding: 1em; font-size: 1.2em; text-align: center; background: #efe; }
