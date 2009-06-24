@@ -29,14 +29,14 @@ class Controller_Admin extends Controller_Template_Wings {
 		// Validate POST for login details
 		$post = Validate::factory($_POST)
 			// Filters
-			->add_filter(TRUE, 'trim')
+			->filter(TRUE, 'trim')
 			// Username rules
-			->add_rule('username', 'not_empty')
-			->add_rule('username', 'regex', array('/^[\pL]{4,24}$/iu'))
-			->add_callback('username', array($this, 'do_login'))
+			->rule('username', 'not_empty')
+			->rule('username', 'regex', array('/^[\pL]{4,24}$/iu'))
+			->callback('username', array($this, 'do_login'))
 			// Password rules
-			->add_rule('password', 'not_empty')
-			->add_rule('password', 'min_length', array('5'));
+			->rule('password', 'not_empty')
+			->rule('password', 'min_length', array('5'));
 
 		if ($post->check($errors))
 		{
@@ -60,17 +60,17 @@ class Controller_Admin extends Controller_Template_Wings {
 		arr::unshift($assoc, 0, '- none -');
 
 		$post = Validate::factory($_POST)
-			->add_filter(TRUE, 'trim')
+			->filter(TRUE, 'trim')
 
-			->add_rule('title', 'not_empty')
-			->add_rule('title', 'regex', array('/^[\pL\pP\s]{4,255}$/iu'))
+			->rule('title', 'not_empty')
+			->rule('title', 'regex', array('/^[\pL\pP\s]{4,255}$/iu'))
 
-			->add_rule('associate_id', 'not_empty')
+			->rule('associate_id', 'not_empty')
 
-			->add_rule('completed', 'not_empty')
-			->add_rule('completed', 'date')
+			->rule('completed', 'not_empty')
+			->rule('completed', 'date')
 
-			->add_rule('website', 'regex', array('#^https?://.+$#'));
+			->rule('website', 'regex', array('#^https?://.+$#'));
 
 		if ($post->check($errors))
 		{

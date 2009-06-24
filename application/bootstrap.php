@@ -53,9 +53,9 @@ define('IN_PRODUCTION', $_SERVER['SERVER_NAME'] !== 'localhost');
  */
 Kohana::init(array(
 	'charset'    => 'utf-8',
-	'base_url'   => '/wingsc/',
+	'base_url'   => IN_PRODUCTION ? '/' : '/wingsc/',
 	'index_file' => FALSE,
-	'profing'    => ! IN_PRODUCTION,
+	'profiling'  => ! IN_PRODUCTION,
 	'caching'    => IN_PRODUCTION
 ));
 
@@ -76,34 +76,41 @@ Kohana::$log->attach(new Kohana_Log_File(APPPATH.'logs'));
  * Set the routes. Each route must have a minimum of a name, a URI and a set of
  * defaults for the URI.
  */
-Route::set('work', 'did(/<project>(/<action>))', array(
-		'project' => '.+?(?:/with/.+?)?',
-	))
-	->defaults(array(
-		'controller' => 'portfolio',
-	));
 
-Route::set('calendar', 'will(/<action>)')
-	->defaults(array(
-		'controller' => 'calendar',
-	));
+if ( ! Route::cache())
+{
+	Route::set('work', 'did(/<project>(/<action>))', array(
+			'project' => '.+?(?:/with/.+?)?',
+		))
+		->defaults(array(
+			'controller' => 'portfolio',
+		));
 
-Route::set('contact', 'for(/<action>)')
-	->defaults(array(
-		'controller' => 'contact',
-	));
+	Route::set('calendar', 'will(/<action>)')
+		->defaults(array(
+			'controller' => 'calendar',
+		));
 
-Route::set('admin', 'admin(/<action>(/<id>))')
-	->defaults(array(
-		'controller' => 'admin'
-	));
+	Route::set('contact', 'for(/<action>)')
+		->defaults(array(
+			'controller' => 'contact',
+		));
 
-Route::set('default', '(<page>)', array('page' => '.+'))
-	->defaults(array(
-		'controller' => 'static',
-		'action'     => 'load',
-		'page'       => 'is'
-	));
+	Route::set('admin', 'admin(/<action>(/<id>))')
+		->defaults(array(
+			'controller' => 'admin'
+		));
+
+	Route::set('default', '(<page>)', array('page' => '.+'))
+		->defaults(array(
+			'controller' => 'static',
+			'action'     => 'load',
+			'page'       => 'is'
+		));
+
+	// Cache the routes
+	Route::cache(TRUE);
+}
 
 /**
  * Execute the main request using PATH_INFO. If no URI source is specified,

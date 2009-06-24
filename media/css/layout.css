@@ -8,7 +8,7 @@ h5 { font-size: 0.8em; }
 h6 { font-size: 0.7em; }
 
 div.container ul { list-style: square; }
-div.container form { width: 90%; margin: 0 auto 1em; }
+div.container form {  }
 	div.container form ul { display: block; margin: 0; padding: 1em; background: #eee; }
 		div.container form ul.errors li { color: #711; }
 	div.container form dl {  }
@@ -46,7 +46,7 @@ div.container form { width: 90%; margin: 0 auto 1em; }
 	#content h2,
 	#content h3 { text-transform: lowercase; padding-bottom: 0.3em; border-bottom: dotted 1px #ddd; }
 	#content .byline { text-transform: uppercase; font-size: 0.7em; color: #666; }
-	#content .intro { margin: 0 -40px 1em; padding: 2em; background: #eee; font-size: 1.4em; line-height: 1.5em; color: #444; font-weight: normal;  border: solid 1px #e6e6e6; border-width: 0 1px 1px 0;}
+	#content .intro { margin: 0 -40px 1em; padding: 2em; background: #eee; font-size: 1.4em; line-height: 1.5em; color: #444; font-weight: normal;  border: solid 1px #e6e6e6; border-width: 0 1px 1px 0; text-transform: none; }
 		#content .intro p:last-child { margin: 0; }
 		#content .intro em { color: #666; font-style: normal; }
 		#content .intro span { color: #999; }
@@ -71,4 +71,5 @@ div.container form { width: 90%; margin: 0 auto 1em; }
 				#portfolio #list li a { display: block; padding: 0.4em; background: #eee; }
 				#portfolio #list li.active a { background: #fff; }
 
+#admin form { width: 90%; margin: 0 auto 1em; }
 #admin p.message { margin: 0 -120px 1em; padding: 1em; font-size: 1.2em; text-align: center; background: #efe; }

@@ -55,5 +55,7 @@
 	</div>
 
 </div>
+<?php if ( ! IN_PRODUCTION) echo View::factory('profiler/stats') ?>
+
 </body>
 </html>
