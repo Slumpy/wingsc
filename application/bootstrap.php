@@ -96,9 +96,10 @@ if ( ! Route::cache())
 			'controller' => 'contact',
 		));
 
-	Route::set('admin', 'admin(/<action>(/<id>))')
+	Route::set('admin', 'admin(/<controller>)((/<id>)/<action>)')
 		->defaults(array(
 			'controller' => 'admin'
+			'controller' => 'login'
 		));
 
 	Route::set('default', '(<page>)', array('page' => '.+'))

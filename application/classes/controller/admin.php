@@ -114,8 +114,18 @@ class Controller_Admin extends Controller_Template_Wings {
 
 	public function after()
 	{
-		$this->template->content = View::factory('template/admin')
-			->set('content', $this->template->content);
+		if ($this->auto_render === TRUE)
+		{
+			$this->template->content = View::factory('template/admin')
+				->set('content', $this->template->content)
+				->bind('menu', $menu);
+
+			foreach (array('projects', 'users') as $type)
+			{
+				// Create the menu items
+				$menu[$this->request->uri(array('controller' => $type))] = ucfirst($type);
+			}
+		}
 
 		parent::after();
 
