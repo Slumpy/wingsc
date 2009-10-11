@@ -89,6 +89,11 @@ if ( ! Route::cache())
 			'controller' => 'contact',
 		));
 
+	Route::set('pay', 'pay')
+		->defaults(array(
+			'controller' => 'payment',
+		));
+
 	Route::set('admin', 'admin(/<controller>)((/<id>)/<action>)')
 		->defaults(array(
 			'directory'  => 'admin',

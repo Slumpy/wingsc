@@ -80,5 +80,11 @@ div.container form {  }
 				#portfolio #list li a { display: block; padding: 0.4em; background: #eee; text-decoration: none; font-size: 0.8em; }
 				#portfolio #list li.active a { background: #fff; }
 
+#payment .gateway { background: #fff; list-style: none; margin: 0; padding: 0; }
+	#payment .gateway li { display: block; line-height: 50px; vertical-align: middle; margin: 0 1em 0.6em; padding: 0.4em; }
+		#payment .gateway li label { cursor: pointer; }
+		#payment .gateway li input,
+		#payment .gateway li img { vertical-align: middle; }
+
 #admin form { width: 90%; margin: 0 auto 1em; }
 #admin p.message { margin: 0 -120px 1em; padding: 1em; font-size: 1.2em; text-align: center; background: #efe; }
