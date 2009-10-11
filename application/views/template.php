@@ -25,7 +25,7 @@
 <body>
 <div class="container">
 
-	<div id="header" class="span-24">
+	<div id="header" class="span-22 prefix-1 suffix-1 last">
 		<?php echo html::anchor('', html::image('media/img/wings.png', array(
 			'alt' => 'w.ings consulting - information transfer engineering',
 			'id' => 'logo'))) ?>

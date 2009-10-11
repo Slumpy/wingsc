@@ -25,9 +25,6 @@ class Controller_Portfolio extends Controller_Template_Wings {
 
 	public function action_get($project)
 	{
-		// Used for AJAX calls only
-		$this->auto_render = FALSE;
-
 		$this->request->response = View::factory('projects/details')
 			->bind('project', $project);
 
