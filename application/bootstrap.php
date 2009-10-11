@@ -19,40 +19,27 @@ date_default_timezone_set('America/Chicago');
 spl_autoload_register(array('Kohana', 'auto_load'));
 
 /**
- * Enable Kohana exception handling, adds stack traces and error source.
- *
- * @see  http://docs.kohanaphp.com/features/exceptions
- * @see  http://php.net/set_exception_handler
- */
-set_exception_handler(array('Kohana', 'exception_handler'));
-
-/**
- * Enable Kohana error handling, converts all PHP errors to exceptions.
- *
- * @see  http://docs.kohanaphp.com/features/exceptions
- * @see  http://php.net/set_error_handler
- */
-set_error_handler(array('Kohana', 'error_handler'));
-
-/**
  * Set the production status by the domain.
  */
 define('IN_PRODUCTION', $_SERVER['SERVER_NAME'] !== 'localhost');
 
-//-- Kohana configuration -----------------------------------------------------
+
+//-- Configuration and initialization -----------------------------------------
 
 /**
  * Initialize Kohana, setting the default options.
  *
  * The following options are available:
- * - base_url:   path, and optionally domain, of your application
- * - index_file: name of your index file, usually "index.php"
- * - charset:    internal character set used for input and output
- * - profile:    enable or disable internal profiling
- * - caching:    enable or disable internal caching
+ *
+ * - string   base_url    path, and optionally domain, of your application   NULL
+ * - string   index_file  name of your index file, usually "index.php"       index.php
+ * - string   charset     internal character set used for input and output   utf-8
+ * - string   cache_dir   set the internal cache directory                   APPPATH/cache
+ * - boolean  errors      enable or disable error handling                   TRUE
+ * - boolean  profile     enable or disable internal profiling               TRUE
+ * - boolean  caching     enable or disable internal caching                 FALSE
  */
 Kohana::init(array(
-	'charset'    => 'utf-8',
 	'base_url'   => IN_PRODUCTION ? '/' : '/wingsc/',
 	'index_file' => FALSE,
 	'profiling'  => ! IN_PRODUCTION,
@@ -60,17 +47,21 @@ Kohana::init(array(
 ));
 
 /**
+ * Attach the file write to logging. Multiple writers are supported.
+ */
+Kohana::$log->attach(new Kohana_Log_File(APPPATH.'logs'));
+
+/**
+ * Attach a file reader to config. Multiple readers are supported.
+ */
+Kohana::$config->attach(new Kohana_Config_File);
+
+/**
  * Enable modules. Modules are referenced by a relative or absolute path.
  */
 Kohana::modules(array(
 	'database'   => MODPATH.'database',   // Database access
 	));
-
-/**
- * Attach the file write to logging. Any Kohana_Log object can be attached,
- * and multiple writers are supported.
- */
-Kohana::$log->attach(new Kohana_Log_File(APPPATH.'logs'));
 
 /**
  * Set the routes. Each route must have a minimum of a name, a URI and a set of
@@ -124,8 +115,14 @@ try
 	// Attempt to execute the response
 	$request->execute();
 }
-catch (Foo_Exception $e)
+catch (Exception $e)
 {
+	if ( ! IN_PRODUCTION)
+	{
+		// Just re-throw the exception
+		throw $e;
+	}
+
 	// Create a 404 response
 	$request->status   = 404;
 	$request->response = View::factory('template')
