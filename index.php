@@ -50,12 +50,6 @@ error_reporting(E_ALL | E_STRICT);
  * @see  http://docs.kohanaphp.com/bootstrap
  */
 
-// Define the start time of the application
-define('KOHANA_START_TIME', microtime(TRUE));
-
-// Define the starting memory of the application
-define('KOHANA_START_MEMORY', memory_get_peak_usage());
-
 // Set the full path to the docroot
 define('DOCROOT', realpath(dirname(__FILE__)).DIRECTORY_SEPARATOR);
 
@@ -85,11 +79,28 @@ if (file_exists('install'.EXT))
 	return include 'install'.EXT;
 }
 
+// Define the start time of the application
+define('KOHANA_START_TIME', microtime(TRUE));
+
+// Define the memory usage at the start of the application
+define('KOHANA_START_MEMORY', memory_get_usage());
+
 // Load the base, low-level functions
 require SYSPATH.'base'.EXT;
 
-// Load the main Kohana class
-require SYSPATH.'classes/kohana'.EXT;
+// Load the core Kohana class
+require SYSPATH.'classes/kohana/core'.EXT;
+
+if (is_file(APPPATH.'classes/kohana'.EXT))
+{
+	// Application extends the core
+	require APPPATH.'classes/kohana'.EXT;
+}
+else
+{
+	// Load empty core extension
+	require SYSPATH.'classes/kohana'.EXT;
+}
 
 // Bootstrap the application
 require APPPATH.'bootstrap'.EXT;
