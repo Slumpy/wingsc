@@ -2,34 +2,29 @@
 
 class Controller_Portfolio extends Controller_Template_Wings {
 
-	public function action_index($project = NULL)
+	public function action_index($slug = NULL)
 	{
 		$this->template->content = View::factory('projects/portfolio')
 			->bind('list', $projects)
 			->bind('details', $details)
-			->bind('active', $project);
+			->bind('active', $slug);
 
 		$projects = DB::query(Database::SELECT, 'SELECT slug, title FROM projects ORDER BY completed DESC')
 			->execute()
 			->as_array('slug', 'title');
 
-		if ($project === NULL)
+		if ($slug === NULL)
 		{
 			// Get the first project in the list
-			$project = key($projects);
+			$slug = key($projects);
 		}
 
 		// Get the project details via a sub-request
-		$details = Request::factory(Route::get('work')->uri(array('project' => $project, 'action' => 'get')))->execute();
-	}
-
-	public function action_get($project)
-	{
-		$this->request->response = View::factory('projects/details')
+		$details = View::factory('projects/details')
 			->bind('project', $project);
 
 		$project = DB::query(Database::SELECT, 'SELECT projects.*, associates.name AS asc_name, associates.website AS asc_website FROM projects LEFT JOIN associates ON projects.associate_id = associates.id WHERE slug = :slug LIMIT 1')
-			->bind(':slug', $project)
+			->bind(':slug', $slug)
 			->execute()
 			->current();
 	}

@@ -44,7 +44,7 @@ class Controller_Contact extends Controller_Template_Wings {
 			->rule('budget', 'not_empty')
 			->rule('budget', 'in_array', array(array_keys($budget)));
 
-		if ($post->check($errors))
+		if ($post->check())
 		{
 			// Create the email body
 			$body = View::factory('template/lead')
@@ -79,6 +79,10 @@ class Controller_Contact extends Controller_Template_Wings {
 
 			// Redirect to the thanks page
 			$this->request->redirect(url::site($this->request->uri(array('action' => 'hire'))));
+		}
+		else
+		{
+			$errors = $post->errors('forms/contact');
 		}
 	}
 
