@@ -130,6 +130,9 @@ catch (Exception $e)
 		throw $e;
 	}
 
+	// Log the error
+	Kohana::$log->add(Kohana::ERROR, Kohana::exception_text($e));
+
 	// Create a 404 response
 	$request->status   = 404;
 	$request->response = View::factory('template')
