@@ -61,6 +61,8 @@ Kohana::$config->attach(new Kohana_Config_File);
  */
 Kohana::modules(array(
 	'database'   => MODPATH.'database',   // Database access
+	'gcheckout'  => MODPATH.'gcheckout',  // Google Checkout payments
+	'paypal'     => MODPATH.'paypal',     // PayPal payments
 	));
 
 /**
