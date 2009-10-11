@@ -1,12 +1,14 @@
 html { background: #fff; font-family: Helvetica, Arial, Verdana, sans-serif; color: #111; }
 body { margin: 0 0 1.5em; }
 
-h1, h2, h3, h4, h5, h6 { font-weight: normal; color: #aaa; }
+h1, h2, h3, h4, h5, h6 { font-weight: normal; color: #324904; }
 h4, h5, h6 { text-transform: uppercase; }
 h4 { font-size: 0.9em; }
 h5 { font-size: 0.8em; }
 h6 { font-size: 0.7em; }
 
+div.container a:visited, a:hover { text-decoration: underline; }
+div.container a[href*="://"] { padding-right: 1.2em; background: transparent url(../icons/page_spearmint_up.png) 100% 0.5em no-repeat; }
 div.container ul { list-style: square; }
 div.container form {  }
 	div.container form ul { display: block; margin: 0; padding: 1em; background: #eee; }
@@ -14,9 +16,10 @@ div.container form {  }
 	div.container form dl {  }
 		div.container form dl dt,
 		div.container form dl dd { width: 100%; }
+		div.container form dl dt { color: #444; }
 			div.container form dd input,
 			div.container form dd select,
-			div.container form dd textarea { width: 98%; font-size: 1.6em; background-color: #f9f9f9; }
+			div.container form dd textarea { width: 98%; font-size: 1.4em; background-color: #f9f9f9; }
 		div.container form dl dd.submit { padding: 1em 0; }
 
 #header,
@@ -43,16 +46,22 @@ div.container form {  }
 				#menu li.for a.active { background-position: -220px -338px; }
 
 #content { padding-top: 20px; background: transparent url(../img/bg_content.xpng) center 0 no-repeat; font-size: 1.2em; }
+	#content a { color: #074848; text-decoration: underline; }
+	#content a:hover, a:visited { color: #022f2f; }
 	#content h2,
 	#content h3 { text-transform: lowercase; padding-bottom: 0.3em; border-bottom: dotted 1px #ddd; }
-	#content .byline { text-transform: uppercase; font-size: 0.7em; color: #666; }
-	#content .intro { margin: 0 -40px 1em; padding: 2em; background: #eee; font-size: 1.4em; line-height: 1.5em; color: #444; font-weight: normal;  border: solid 1px #e6e6e6; border-width: 0 1px 1px 0; text-transform: none; }
+	#content .intro { margin: 0 -40px 1em; padding: 2em 40px; font-size: 1.2em; line-height: 1.5em; color: #022f2f; font-weight: normal; border-bottom: solid 1em #eee; text-transform: none !important; text-align: justify; }
 		#content .intro p:last-child { margin: 0; }
 		#content .intro em { color: #666; font-style: normal; }
 		#content .intro span { color: #999; }
+	#content .byline { margin-bottom: 2em; text-transform: uppercase; font-size: 0.7em; color: #666; }
+	#content ul.menu { margin: 0 -40px; padding: 1em 0; list-style: none; overflow: auto; border-bottom: solid 0.4em #eee; }
+		#content ul.menu li { float: left; display: block; margin: 0; padding: 1em 2em 0; padding-left: 0; }
+		#content ul.menu li ul { margin: 0; padding: 0.4em; list-style: none; }
+		#content ul.menu li li { float: none; padding: 0; font-size: 0.7em; }
 
 #footer { min-height: 200px; padding-top: 20px; text-transform: lowercase; color: #999; }
-	#footer a { color: #999; }
+	#footer a { color: #999; padding: 0; background: none; }
 	#footer a:hover { color: #780c0c; }
 	#footer p { float: left; clear: left; margin: 0; }
 	#footer div.vcard {  }
@@ -68,7 +77,7 @@ div.container form {  }
 	#portfolio #list { margin: 0 0 0; background: #eee; }
 		#portfolio #list ol { display: block; margin: 2em 0; padding: 0; list-style: none; background: #eee; }
 			#portfolio #list li { display: block; padding: 0.2em 0; padding-right: 0.4em; }
-				#portfolio #list li a { display: block; padding: 0.4em; background: #eee; }
+				#portfolio #list li a { display: block; padding: 0.4em; background: #eee; text-decoration: none; font-size: 0.8em; }
 				#portfolio #list li.active a { background: #fff; }
 
 #admin form { width: 90%; margin: 0 auto 1em; }
