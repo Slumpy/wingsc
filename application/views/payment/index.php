@@ -1,7 +1,7 @@
 <div id="payment">
 
 	<h1 class="intro">Want to make a payment on an invoice? You can pay with Google Checkout or PayPal right here.<br/>
-		For other payment options, please <?php echo HTML::anchor(Route::get('contact')->uri(), 'contact me') ?>.</h1>
+		For other payment options, please <?php echo HTML::mailto('woody@wings.com', 'email me') ?>.</h1>
 
 	<?php echo form::open(NULL) ?>
 
