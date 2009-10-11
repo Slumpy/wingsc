@@ -98,15 +98,15 @@ if ( ! Route::cache())
 
 	Route::set('admin', 'admin(/<controller>)((/<id>)/<action>)')
 		->defaults(array(
-			'controller' => 'admin'
-			'controller' => 'login'
+			'directory'  => 'admin',
+			'controller' => 'login',
 		));
 
 	Route::set('default', '(<page>)', array('page' => '.+'))
 		->defaults(array(
 			'controller' => 'static',
 			'action'     => 'load',
-			'page'       => 'is'
+			'page'       => 'is',
 		));
 
 	// Cache the routes
