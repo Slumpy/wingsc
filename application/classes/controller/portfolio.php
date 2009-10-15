@@ -9,9 +9,7 @@ class Controller_Portfolio extends Controller_Template_Wings {
 			->bind('details', $details)
 			->bind('active', $slug);
 
-		$projects = DB::query(Database::SELECT, 'SELECT slug, title FROM projects ORDER BY completed DESC')
-			->execute()
-			->as_array('slug', 'title');
+		$projects = Sprig::factory('project')->select_list('slug', 'title');
 
 		if ($slug === NULL)
 		{
@@ -23,10 +21,7 @@ class Controller_Portfolio extends Controller_Template_Wings {
 		$details = View::factory('projects/details')
 			->bind('project', $project);
 
-		$project = DB::query(Database::SELECT, 'SELECT projects.*, associates.name AS asc_name, associates.website AS asc_website FROM projects LEFT JOIN associates ON projects.associate_id = associates.id WHERE slug = :slug LIMIT 1')
-			->bind(':slug', $slug)
-			->execute()
-			->current();
+		$project = Sprig::factory('project', array('slug' => $slug))->load();
 	}
 
 } // End Portfolio

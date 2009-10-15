@@ -73,7 +73,12 @@ div.container form {  }
 
 #portfolio { background: #eee; overflow: auto; }
 	#portfolio #details { background: #fff; margin-right: 0; padding-right: 10px; }
-		#portfolio #details .image { width: 600px; min-height: 200px; padding: 15px; text-align: center; background: #222 url(../img/loading.gif) center center no-repeat; }
+		#portfolio #details .image { text-align: center; background: #222; padding: 15px; }
+		#portfolio #details .image p { width: 600px; min-height: 200px; margin: 0; padding: 0; background: transparent url(../img/loading.gif) center center no-repeat; }
+		#portfolio #details .image .chooser { list-style: none; display: block; margin: 0 0 1em; padding: 0; font-size: 0.8em; }
+		#portfolio #details .image .chooser li { display: inline; margin: 0; padding: 0 0.4em; }
+		#portfolio #details .image .chooser a { color: #999; text-decoration: none; }
+		#portfolio #details .image .chooser a:hover { color: #eee; }
 	#portfolio #list { margin: 0 0 0; background: #eee; }
 		#portfolio #list ol { display: block; margin: 2em 0; padding: 0; list-style: none; background: #eee; }
 			#portfolio #list li { display: block; padding: 0.2em 0; padding-right: 0.4em; }
