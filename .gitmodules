@@ -13,3 +13,6 @@
 [submodule "modules/paypal"]
 	path = modules/paypal
 	url = git://github.com/shadowhand/paypal.git
+[submodule "modules/sprig"]
+	path = modules/sprig
+	url = git://github.com/shadowhand/sprig.git
