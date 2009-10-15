@@ -3,7 +3,7 @@
 	url = git://github.com/shadowhand/kohana-core.git
 [submodule "modules/database"]
 	path = modules/database
-	url = git://github.com/shadowhand/kohana-database.git
+	url = git://github.com/kohana/database.git
 [submodule "application/vendor/swift"]
 	path = application/vendor/swift
 	url = git://github.com/swiftmailer/swiftmailer.git
