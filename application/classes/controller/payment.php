@@ -32,7 +32,9 @@ class Controller_Payment extends Controller_Template_Wings {
 				// Process the payment using Google Checkout
 				gCheckout_Cart::factory($config->merchant_id, $config->merchant_key, $config->sandbox)
 					->continue_shopping_url($return)
-					->item(gCheckout_Item::factory('w.ings invoice #'.$post['invoice'], '', 1, $post['amount']))
+					->item(gCheckout_Item::factory('w.ings invoice #'.$post['invoice'], '', 1, $post['amount'])
+						->digital_content(gCheckout_Digital::factory()
+							->description('Thank you for your payment!')))
 					->default_tax(gCheckout_Tax::factory(0, FALSE)
 						->area(gCheckout_Area_World::factory()))
 					->execute(TRUE);
