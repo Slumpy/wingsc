@@ -21,7 +21,7 @@
 		<li><?php echo HTML::anchor($image->verbose('file'), '[ '.($i+1).' ]', array('title' => $image->title)) ?></li>
 	<?php endforeach ?>
 	</ul>
-	<?php $image = $project->images->current() ?>
+	<?php $image = $project->images[0] ?>
 	<p><?php echo HTML::image($image->verbose('file'), array('alt' => $image->title)) ?></p>
 </div>
 
