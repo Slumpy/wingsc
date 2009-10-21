@@ -31,4 +31,17 @@ $(document).ready(function()
 			return false;
 		});
 	});
+
+	$('#admin .message').each(function()
+	{
+		var self = $(this);
+
+		self.animate({ backgroundColor: '#eeeeee' }, 2000, function()
+		{
+			self.slideUp(200, function()
+			{
+				self.remove();
+			});
+		});
+	});
 });

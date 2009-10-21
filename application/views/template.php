@@ -3,23 +3,24 @@
 <head>
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="keywords" content="" />
-<meta name="description" content="" />
+<meta name="keywords" content="web development, web consulting, search engine optimization, kohana consulting, kohana framework, php developer, php website, php 5, php, ajax, sso, xhtml, css, wings, wings consulting, information transfer engineering, grand marais, duluth, minneapolis, minnesota, north shore, lake superior, web application, content management, custom website, business website, freelance developer" />
+<meta name="description" content="w.ings consulting is the web development business of Woody Gilk. I design, implement, and optimize digital solutions to effectively communicate information from one person to another." />
 
 <title><?php if (!empty($title)) echo "$title ~ " ?>w.ings consulting ~ information transfer engineering</title>
 
 <?php echo
-	html::style('media/css/print.css', array('media' => 'print')),
-	html::style('media/css/screen.css', array('media' => 'screen')),
-	html::style('media/css/layout.css', array('media' => 'screen')) ?>
+	HTML::style('media/css/print.css', array('media' => 'print')),
+	HTML::style('media/css/screen.css', array('media' => 'screen')),
+	HTML::style('media/css/layout.css', array('media' => 'screen')) ?>
 
 <script type="text/javascript">
 	// Base URL of the application
 	var base_url = '<?php echo url::base() ?>';
 </script>
 <?php echo
-	html::script('http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js'),
-	html::script('media/js/effects.js') ?>
+	HTML::script('http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js'),
+	HTML::script('media/js/color.js'),
+	HTML::script('media/js/effects.js') ?>
 
 </head>
 <body>
