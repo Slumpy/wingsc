@@ -20,7 +20,7 @@ class Controller_Payment extends Controller_Template_Wings {
 		if ($post->check())
 		{
 			// Format the amount into dollars
-			$post['amount'] = number_format($post['amount'], 2);
+			$post['amount'] = number_format($post['amount'], 2, '.', '');
 
 			// Return URL when payment is complete
 			$return = URL::site($this->request->uri, Request::$protocol);
