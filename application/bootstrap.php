@@ -21,7 +21,7 @@ spl_autoload_register(array('Kohana', 'auto_load'));
 /**
  * Set the production status by the domain.
  */
-define('IN_PRODUCTION', $_SERVER['SERVER_NAME'] !== 'localhost');
+define('IN_PRODUCTION', $_SERVER['SERVER_ADDR'] !== '127.0.0.1');
 
 
 //-- Configuration and initialization -----------------------------------------
@@ -40,7 +40,7 @@ define('IN_PRODUCTION', $_SERVER['SERVER_NAME'] !== 'localhost');
  * - boolean  caching     enable or disable internal caching                 FALSE
  */
 Kohana::init(array(
-	'base_url'   => IN_PRODUCTION ? '/' : '/wingsc/',
+	'base_url'   => '/',
 	'index_file' => FALSE,
 	'profiling'  => ! IN_PRODUCTION,
 	'caching'    => IN_PRODUCTION
@@ -141,7 +141,7 @@ catch (Exception $e)
 		->set('content', View::factory('errors/404'));
 }
 
-if ($request->send_headers()->response)
+if ($request->response)
 {
 	// Get the total memory and execution time
 	$total = array(
@@ -149,11 +149,11 @@ if ($request->send_headers()->response)
 		'{execution_time}' => number_format(microtime(TRUE) - KOHANA_START_TIME, 5).' seconds');
 
 	// Insert the totals into the response
-	$request->response = str_replace(array_keys($total), $total, $request->response);
+	$request->response = strtr((string) $request->response, $total);
 }
 
 
 /**
  * Display the request response.
  */
-echo $request->response;
+echo $request->send_headers()->response;
