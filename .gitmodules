@@ -15,4 +15,4 @@
 	url = git://github.com/shadowhand/paypal.git
 [submodule "modules/sprig"]
 	path = modules/sprig
-	url = git://github.com/shadowhand/sprig.git
+	url = git://github.com/sittercity/sprig.git
