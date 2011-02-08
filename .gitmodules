@@ -1,18 +1,9 @@
 [submodule "system"]
 	path = system
-	url = git://github.com/kohana/core.git
-[submodule "modules/database"]
-	path = modules/database
-	url = git://github.com/kohana/database.git
-[submodule "application/vendor/swift"]
-	path = application/vendor/swift
-	url = git://github.com/swiftmailer/swiftmailer.git
-[submodule "modules/gcheckout"]
-	path = modules/gcheckout
-	url = git://github.com/shadowhand/gcheckout.git
-[submodule "modules/paypal"]
-	path = modules/paypal
-	url = git://github.com/shadowhand/paypal.git
-[submodule "modules/sprig"]
-	path = modules/sprig
-	url = git://github.com/sittercity/sprig.git
+	url = https://github.com/kohana/core.git
+[submodule "modules/oauth"]
+	path = modules/oauth
+	url = https://github.com/kohana/oauth.git
+[submodule "modules/image"]
+	path = modules/image
+	url = https://github.com/kohana/image.git
