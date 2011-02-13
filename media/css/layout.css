@@ -1,0 +1,66 @@
+html {
+	background: #efefef url('../img/bg-tile-white.png') repeat center center;
+}
+
+body {
+	margin-top: 0;
+}
+
+.row .side {
+	background: #771214;
+	color: #fff;
+	padding-left: 1%;
+	padding-right: 1%;
+	margin-right: 1.08%;
+	padding-bottom: 1000em;
+	margin-bottom: -1000em;
+	text-align: right;
+}
+	#copyright .side {
+		padding-bottom: 0;
+		margin-bottom: 1em;
+		border-bottom-right-radius: 0.25em;
+		border-bottom-left-radius: 0.25em;
+	}
+	.row .side h1 {
+		font-weight: normal;
+		font-size: 1.6em;
+		margin: 0;
+		padding: 0;
+	}
+
+#top div p {
+	padding-top: 2em;
+}
+
+#copyright p {
+	font-size: 0.6em;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+}
+
+/* Small screens (iPhone, etc) */
+@media handheld, only screen and (max-width: 767px) {
+
+.row .side {
+	padding-left: 20px;
+	padding-right: 20px;
+	margin-left: 0;
+	margin-right: 0;
+	margin-bottom: 1em !important;
+	padding-bottom: 0 !important;
+	text-align: left;
+}
+	#copyright .side {
+		border-radius: 0;
+	}
+	.row .side h1 {
+		padding: 0.4em 0;
+	}
+
+#top div p {
+	padding-top: 0.2em;
+}
+
+}
+/* End small screens */
