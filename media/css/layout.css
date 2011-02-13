@@ -1,14 +1,31 @@
 html {
 	background: #efefef url('../img/bg-tile-white.png') repeat 0 0;
+	color: #111;
 }
 
 body {
 	margin-top: 0;
 }
 
-.row {
-	margin: 0;
+h1, h2, h3, h4, h5, h6 {
+	font-weight: normal;
+	font-family: 'Cabin', Helvetica, Arial, sans-serif;
+	letter-spacing: 0.07em;
 }
+
+a:link {
+	color: #118;
+	text-decoration: underline;
+}
+a:visited {
+	color: #117;
+}
+a:active {
+	color: #114;
+}
+	a:link img {
+		display: inline-block;
+	}
 
 .row .side {
 	background: #771214;
@@ -20,6 +37,14 @@ body {
 	margin-bottom: -1000em;
 	text-align: right;
 }
+	.row .side h1 {
+		font-weight: normal;
+		opacity: 0.8;
+		text-shadow: 0.1em 0.1em 0.02em rgba(0, 0, 0, 0.2);
+	}
+	.row:hover .side h1 {
+		opacity: 1;
+	}
 	#copyright .side {
 		padding-bottom: 0;
 		margin-bottom: 1em;
@@ -44,7 +69,33 @@ body {
 }
 	#top .side {
 		margin-top: -7em;
+		margin-bottom: -998em;
 	}
+	#top .logo a {
+		opacity: 0.8;
+	}
+	#top .logo a:hover {
+		opacity: 1;
+	}
+	#top .box {
+		background: #fff;
+		color: #888;
+		padding: 0.8em;
+		text-align: center;
+	}
+		#top .box a {
+			text-decoration: none;
+		}
+		#top .box img {
+			vertical-align: middle;
+			max-height: 1.4em;
+		}
+		#top .next-available .yes {
+			color: #191;
+		}
+		#top .next-available .no {
+			color: #911;
+		}
 
 #copyright p {
 	font-size: 0.6em;
