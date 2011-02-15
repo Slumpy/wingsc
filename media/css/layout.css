@@ -109,6 +109,14 @@ a:active {
 			color: #911;
 		}
 
+#contact .call {
+	float: right;
+	margin-top: 1.8em;
+	margin-left: 2em;
+	padding: 0.4em;
+	padding-right: 0;
+}
+
 #copyright p {
 	font-size: 0.6em;
 	letter-spacing: 0.12em;
