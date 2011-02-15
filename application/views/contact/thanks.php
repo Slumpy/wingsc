@@ -1,1 +1,0 @@
-<p><strong>Thanks for the lead! I will follow up as soon as I am able.</strong></p>
