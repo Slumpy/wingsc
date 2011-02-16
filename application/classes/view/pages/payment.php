@@ -6,6 +6,26 @@ class View_Pages_Payment extends View_Layout {
 
 	public $errors = array();
 
+	public function has_errors()
+	{
+		return ! empty($this->errors);
+	}
+
+	public function errors()
+	{
+		$errors = array();
+
+		foreach ($this->errors as $field => $error)
+		{
+			$errors[] = array(
+				'name' => $field,
+				'message' => $error,
+			);
+		}
+
+		return $errors;
+	}
+
 	public function inputs()
 	{
 		return array(

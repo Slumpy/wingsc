@@ -27,6 +27,13 @@ a:active {
 		display: inline-block;
 	}
 
+form .errors ul {
+	margin-left: 0;
+	margin-right: 0;
+	list-style: square inside;
+	color: #911;
+}
+
 .intro {
 	clear: both;
 	text-align: justify;
@@ -115,20 +122,19 @@ a:active {
 	padding: 0 0 0.4em 0.6em;
 }
 
-#payment .warning {
-	border-color: #911;
-	border-color: rgba(153, 17, 17, 0.8);
-}
 #payment form {
 	padding: 1em;
 	font-size: 1.4em;
 	background-color: #fff;
 	background-color: rgba(255, 255, 255, 0.3);
+	text-align: center;
 }
-	#payment form p {
+	#payment form .errors ul {
 		text-align: center;
 	}
-	#payment .providers input {
+	#payment form p {
+	}
+	#payment form .providers input {
 		vertical-align: middle;
 	}
 

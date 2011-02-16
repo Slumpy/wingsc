@@ -1,0 +1,10 @@
+{{#has_errors}}
+<div class="errors">
+	<p>An error occurred, please check your input:</p>
+	<ul>
+		{{#errors}}
+		<li rel="{{name}}">{{message}}</li>
+		{{/errors}}
+	</ul>
+</div>
+{{/has_errors}}

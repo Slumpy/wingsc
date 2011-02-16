@@ -81,8 +81,6 @@ class Controller_Pay extends Controller_Layout {
 		}
 
 		$errors = $post->errors('forms/payment');
-
-		echo Kohana::debug($errors);
 	}
 
 } // End Pay
