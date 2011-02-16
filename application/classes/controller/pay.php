@@ -1,6 +1,6 @@
 <?php defined('SYSPATH') or die('No direct script access.');
 
-class Controller_Payment extends Controller_Template_Wings {
+class Controller_Pay extends Controller_Layout {
 
 	public function action_index()
 	{
@@ -63,4 +63,4 @@ class Controller_Payment extends Controller_Template_Wings {
 		$errors = $post->errors('forms/payment');
 	}
 
-} // End Payment
+} // End Pay
