@@ -32,20 +32,46 @@
 </head>
 <body>
 
-<div class="container">
-{{> content}}
-<div id="copyright" class="row">
-	<div class="fourcol side">
-		<p>&copy;2011 w.ings consulting</p>
-	</div>
-	<div class="eightcol main last">
-		<p>All rights reserved.</p>
-	</div>
-</div>
-</div>
+	<div class="container">
+		<div id="top" class="row">
+			<div class="fourcol side">
+				<p class="logo">
+					<a href="{{base}}" title="wings home page">
+						<img src="media/img/wings-consulting.png" alt="w.ings consulting" />
+					</a>
+				</p>
+			</div>
+			<div class="threecol main">
+				<p class="box latest-client">
+					Our last client was <a href="http://www.iwmarketing.com"><img src="media/img/logos/imagewerks.png" alt="imagewerks marketing" /> imagewerks</a>.
+				</p>
+			</div>
+			<div class="threecol main">
+				<p class="box next-available">
+					Available after <span class="date no">11/11</span> 2011.
+				</p>
+			</div>
+			<div class="twocol main last">
+				<p class="box pay-invoice">
+					<a href="pay">Pay Invoice</a>
+				</p>
+			</div>
+		</div>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js" type="text/javascript" charset="utf-8"></script>
-<script src="media/js/effects.js" type="text/javascript" charset="utf-8"></script>
+		{{> content}}
+
+		<div id="copyright" class="row">
+			<div class="fourcol side">
+				<p>&copy;2011 w.ings consulting</p>
+			</div>
+			<div class="eightcol main last">
+				<p>All rights reserved.</p>
+			</div>
+		</div>
+	</div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="media/js/effects.js" type="text/javascript" charset="utf-8"></script>
 
 </body>
 </html>
