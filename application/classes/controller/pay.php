@@ -101,7 +101,7 @@ class Controller_Pay extends Controller_Layout {
 			}
 		}
 
-		$errors = $post->errors('forms/payment');
+		$errors = $post->errors('payment');
 	}
 
 } // End Pay
