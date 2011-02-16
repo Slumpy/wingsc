@@ -2,13 +2,13 @@
 	<div class="fourcol side">
 		<h1>really simple payments.</h1>
 	</div>
-	<div class="sixcol main last">
+	<div class="sixcol main">
 		<p class="intro">Fill out the two fields below and choose your preferred payment provider.
 			The rest of your payment details will be collected on a secure site.</p>
 		<form method="post" accept-encoding="utf8">
 			{{> errors}}
 			{{#inputs}}
-			<p>I want to pay ${{& amount}} on invoice #{{& invoice}} using:</p>
+			<p>Pay ${{& amount}} on invoice #{{& invoice}} using:</p>
 			<p class="providers">
 				{{#providers}}
 				<input name="gateway" value="{{name}}" type="image" src="{{image}}" alt="{{title}}" />
@@ -17,6 +17,9 @@
 			{{/inputs}}
 		</form>
 	</div>
-	<div class="threecol main last">
+	<div class="twocol main last">
+		<p class="intro">Need to Talk?</p>
+		<p>Please <a href="{{&hello_at_wingsc}}">email us</a> if need a different payment option or if you have any other concerns.</p>
+		<p>Thanks you for your business!</p>
 	</div>
 </div>
