@@ -80,6 +80,7 @@ Kohana::modules(array(
 	// 'cache'      => MODPATH.'cache',      // Caching with multiple backends
 	// 'codebench'  => MODPATH.'codebench',  // Benchmarking tool
 	// 'database'   => MODPATH.'database',   // Database access
+	'gcheckout'  => MODPATH.'gcheckout',  // Google Checkout
 	// 'image'      => MODPATH.'image',      // Image manipulation
 	// 'orm'        => MODPATH.'orm',        // Object Relationship Mapping
 	// 'oauth'      => MODPATH.'oauth',      // OAuth authentication
