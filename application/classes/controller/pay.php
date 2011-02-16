@@ -17,7 +17,7 @@ class Controller_Pay extends Controller_Layout {
 			->rule('invoice', 'not_empty')
 			->rule('invoice', 'digit')
 			->rule('gateway', 'not_empty')
-			->rule('gateway', 'in_array', array(array(/* 'wepay', **not working** */ 'gcheckout', 'paypal')));
+			->rule('gateway', 'in_array', array(array('wepay', 'gcheckout', 'paypal')));
 
 		if ($post->check())
 		{
@@ -40,7 +40,7 @@ class Controller_Pay extends Controller_Layout {
 						'partial' => 1,
 					);
 
-					$wepay = (Kohana::config('wepay')->stage ? 'https://stage.wepayapi.com/' : 'https://wepayapi.com/').'v1/';
+					$wepay = (Kohana::config('wepay')->stage ? 'https://stage.wepay.com/' : 'https://www.wepay.com/');
 
 					$response = Remote::get("{$wepay}sp/create?".http_build_query($params, '&'));
 

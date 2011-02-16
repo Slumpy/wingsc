@@ -45,13 +45,12 @@ class View_Pages_Payment extends View_Layout {
 	public function providers()
 	{
 		return array(
-			// Not working :(
-			// array(
-			// 	'name' => 'wepay',
-			// 	'title' => 'We Pay',
-			// 	'image' => 'media/img/logos/wepay.png',
-			// 	'preferred' => TRUE,
-			// ),
+			array(
+				'name' => 'wepay',
+				'title' => 'We Pay',
+				'image' => 'media/img/logos/wepay.png',
+				'preferred' => TRUE,
+			),
 			array(
 				'name' => 'gcheckout',
 				'title' => 'Google Checkout',
