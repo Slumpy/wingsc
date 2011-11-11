@@ -137,6 +137,20 @@ form .errors ul {
 	#payment form .providers input {
 		vertical-align: middle;
 	}
+	#payment form button.image {
+		border: 0;
+		background: transparent;
+		padding: 0;
+	}
+	#payment form button.image img {
+		opacity: 0.8;
+	}
+	#payment form button.image:hover img {
+		opacity: 0.9;
+	}
+	#payment form button.image:active img {
+		opacity: 1;
+	}
 
 #copyright p {
 	font-size: 0.6em;

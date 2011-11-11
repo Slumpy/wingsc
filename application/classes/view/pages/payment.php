@@ -46,12 +46,6 @@ class View_Pages_Payment extends View_Layout {
 	{
 		return array(
 			array(
-				'name' => 'wepay',
-				'title' => 'We Pay',
-				'image' => 'media/img/logos/wepay.png',
-				'preferred' => TRUE,
-			),
-			array(
 				'name' => 'gcheckout',
 				'title' => 'Google Checkout',
 				'image' => 'https://checkout.google.com/buttons/checkout.gif'.URL::query(array(
@@ -67,6 +61,12 @@ class View_Pages_Payment extends View_Layout {
 				'name' => 'paypal',
 				'title' => 'PayPal',
 				'image' => 'https://www.paypal.com/en_US/i/btn/btn_xpressCheckout.gif',
+			),
+			array(
+				'name' => 'wepay',
+				'title' => 'We Pay',
+				'image' => 'media/img/logos/wepay.png',
+				'preferred' => TRUE,
 			),
 		);
 	}

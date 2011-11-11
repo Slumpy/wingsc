@@ -11,7 +11,9 @@
 			<p>Pay ${{& amount}} on invoice #{{& invoice}} using:</p>
 			<p class="providers">
 				{{#providers}}
-				<input name="gateway" value="{{name}}" type="image" src="{{image}}" alt="{{title}}" />
+				<button name="gateway" value="{{name}}" type="submit" class="image">
+					<img src="{{image}}" alt="{{title}}" />
+				</button>
 				{{/providers}}
 			</p>
 			{{/inputs}}
