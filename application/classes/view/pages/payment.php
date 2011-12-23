@@ -48,7 +48,7 @@ class View_Pages_Payment extends View_Layout {
 			array(
 				'name' => 'gcheckout',
 				'title' => 'Google Checkout',
-				'image' => 'https://checkout.google.com/buttons/checkout.gif'.URL::query(array(
+				'image' => '//checkout.google.com/buttons/checkout.gif'.URL::query(array(
 					'merchant_id' => Kohana::config('gcheckout')->merchant_id,
 					'w' => 180,
 					'h' => 46,
@@ -60,7 +60,7 @@ class View_Pages_Payment extends View_Layout {
 			array(
 				'name' => 'paypal',
 				'title' => 'PayPal',
-				'image' => 'https://www.paypal.com/en_US/i/btn/btn_xpressCheckout.gif',
+				'image' => '//www.paypal.com/en_US/i/btn/btn_xpressCheckout.gif',
 			),
 			array(
 				'name' => 'wepay',
