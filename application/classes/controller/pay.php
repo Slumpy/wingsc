@@ -2,6 +2,23 @@
 
 class Controller_Pay extends Controller_Layout {
 
+	public function before()
+	{
+		if (Kohana::$environment === Kohana::PRODUCTION)
+		{
+			if (Request::$protocol !== 'https')
+			{
+				// Generate a secure URL
+				$url = $this->request->url(NULL, 'https');
+
+				// Require a secure connection
+				$this->request->redirect($url);
+			}
+		}
+
+		return parent::before();
+	}
+
 	public function action_index()
 	{
 		$this->request->response = Walrus::simple('pages/payment', array(
