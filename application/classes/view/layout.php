@@ -7,7 +7,7 @@ class View_Layout extends Walrus_Layout {
 		return Route::url('default', array(
 			'controller' => FALSE,
 			'action'     => FALSE,
-		));
+		), TRUE);
 	}
 
 	public function woody_at_wingsc()
